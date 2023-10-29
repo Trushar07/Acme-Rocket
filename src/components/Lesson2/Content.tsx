@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import ContactUs from "./ContactUs";
 import ListCard from "./ListCard";
 import Testimonial from "./Testimonial";
@@ -7,6 +8,23 @@ import RocketMan from "./assets/rocketman.png";
 import RocketRide from "./assets/rocketride.png";
 
 function Content() {
+  function handleIntersection(entries: IntersectionObserverEntry[]) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("showanimation");
+      } else {
+        entry.target.classList.remove("showanimation");
+      }
+    });
+  }
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleIntersection);
+    const hiddenElements = document.querySelectorAll(".hide");
+    hiddenElements?.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main className="max-w-4xl mx-auto">
       <section
@@ -35,31 +53,36 @@ function Content() {
       <hr className="w-1/2 bg-black dark:bg-white mx-auto" />
 
       <section id="rockets" className="p-6 my-12 scroll-mt-20">
-        <h2 className="text-4xl sm:text-5xl text-slate-900 dark:text-white text-center font-bold mb-5 scroll-mt-20">
+        <h2 className="text-4xl sm:text-5xl text-slate-900 dark:text-white text-center font-bold mb-5 scroll-mt-20 hide">
           Our Rockets
         </h2>
 
         <ul className="list-none mx-auto flex flex-col sm:flex-row my-12 items-center gap-8 ">
-          <ListCard
-            photo={RocketMan}
-            title="Explorer"
-            price="$"
-            desc="Affordable Exploration"
-          />
+          <li className="w-2/3 sm:h-5/6 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-white dark:bg-gray-800 shadow-xl rounded-3xl py-6 px-2 hide">
+            <ListCard
+              photo={RocketMan}
+              title="Explorer"
+              price="$"
+              desc="Affordable Exploration"
+            />
+          </li>
 
-          <ListCard
-            photo={RocketRide}
-            title="Adventurer"
-            price="$$"
-            desc="Best Selling Exploration"
-          />
-
-          <ListCard
-            photo={RocketLaunch}
-            title="Infinity"
-            price="$$$"
-            desc="Luxury Exploration"
-          />
+          <li className="w-2/3 sm:h-5/6 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-white dark:bg-gray-800 shadow-xl rounded-3xl py-6 px-2 hide delay-200">
+            <ListCard
+              photo={RocketRide}
+              title="Adventurer"
+              price="$$"
+              desc="Best Selling Exploration"
+            />
+          </li>
+          <li className="w-2/3 sm:h-5/6 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-white dark:bg-gray-800 shadow-xl rounded-3xl py-6 px-2 hide delay-500">
+            <ListCard
+              photo={RocketLaunch}
+              title="Infinity"
+              price="$$$"
+              desc="Luxury Exploration"
+            />
+          </li>
         </ul>
       </section>
 
