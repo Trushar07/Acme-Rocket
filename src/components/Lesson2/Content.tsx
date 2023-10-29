@@ -32,22 +32,26 @@ function Content() {
         id="hero"
       >
         <article className="sm:w-1/2">
-          <h2 className="max-w-md text-4xl font-bold text-center sm:text-left sm:text-5xl text-slate-900 dark:text-white">
+          <h2 className="hide max-w-md text-4xl font-bold text-center sm:text-left sm:text-5xl text-slate-900 dark:text-white">
             We Boldly Go{" "}
             <span className="text-indigo-700 dark:text-indigo-300">
               Where No Rocket
             </span>{" "}
             Has Gone Before...
           </h2>
-          <p className="max-w-md text-2xl mt-4 text-center sm:text-left text-slate-700 dark:text-slate-400">
+          <p className="max-w-md text-2xl mt-4 text-center sm:text-left text-slate-700 dark:text-slate-400 hide transition delay-150">
             We are building rockets for the next century today. From
             Moon&#127773; to Mars&#128165;, Saturn🪐 and Beyond...
           </p>
-          <p className="max-w-md text-2xl mt-4 text-center sm:text-left text-slate-700 dark:text-slate-400">
+          <p className="max-w-md text-2xl mt-4 text-center sm:text-left text-slate-700 dark:text-slate-400 hide transition delay-300">
             Think Acme Rockets🚀
           </p>
         </article>
-        <img src={RocketDab} alt="Rocket Dab Image" className="w-1/2" />
+        <img
+          src={RocketDab}
+          alt="Rocket Dab Image"
+          className="w-1/2 hide transition delay-700"
+        />
       </section>
 
       <hr className="w-1/2 bg-black dark:bg-white mx-auto" />
