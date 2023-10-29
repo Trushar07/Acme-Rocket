@@ -93,20 +93,26 @@ function Content() {
           Testimonials
         </h2>
 
-        <Testimonial
-          quote="Acme has always been there for me. Their Explorer rocket arrived in a wooden crate as expected. Life-long customer! A++ shopping experience."
-          author="Wile E. Coyote, Genius"
-        />
+        <div className="hide">
+          <Testimonial
+            quote="Acme has always been there for me. Their Explorer rocket arrived in a wooden crate as expected. Life-long customer! A++ shopping experience."
+            author="Wile E. Coyote, Genius"
+          />
+        </div>
 
-        <Testimonial
-          quote=" The Acme Adventurer Rocket has thwarted my Illudium Q-36 Explosive Space Modulator on several. Nevertheless, K-9 and I have awarded Acme the Martian contract for space exploration rockets based on Acme's quality and sturdy designs."
-          author="Marvin The Martian &amp; K-9"
-        />
+        <div className="hide transition delay-150">
+          <Testimonial
+            quote=" The Acme Adventurer Rocket has thwarted my Illudium Q-36 Explosive Space Modulator on several. Nevertheless, K-9 and I have awarded Acme the Martian contract for space exploration rockets based on Acme's quality and sturdy designs."
+            author="Marvin The Martian &amp; K-9"
+          />
+        </div>
 
-        <Testimonial
-          quote="I knew I not only wanted. I needed Acme's Infinity Rocket for my mission in space. Acme delivered in one day! Nothing says Take me to your leader like Acme's Infinity Rocket! 💯"
-          author="Buzz Lightyear"
-        />
+        <div className="hide transition delay-300">
+          <Testimonial
+            quote="I knew I not only wanted. I needed Acme's Infinity Rocket for my mission in space. Acme delivered in one day! Nothing says Take me to your leader like Acme's Infinity Rocket! 💯"
+            author="Buzz Lightyear"
+          />
+        </div>
       </section>
 
       <hr className="w-1/2 bg-black dark:bg-white mx-auto" />
